@@ -108,4 +108,4 @@ sed -i -e 's#href="\([^:]\+:\)#href="./\1#g' \
        -e "s#\(indexmenu_\S\+\.config\.urlbase='\)[^']\+'#\1./'#" \
        -e "s#\(indexmenu_\S\+\.add('[^']\+\)#\1.html#" \
        -e "s#\(indexmenu_\S\+\.add([^,]\+,[^,]\+,[^,]\+,[^,]\+,'\)\([^']\+\)'#\1./\2.html'#" \
-       ${PREFIX}/*.html
+       ${PREFIX}/${LOCATION%/*}/*.html
