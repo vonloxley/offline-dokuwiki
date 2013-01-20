@@ -95,7 +95,7 @@ wget  --no-verbose \
       --auth-no-challenge \
       --adjust-extension \
       --exclude-directories=_detail,_export \
-      --reject="feed.php*,*do=backlink.html,*do=edit.html,*do=index.html,*indexer.php?id=*" \
+      --reject="feed.php*,*do=backlink.html,*do=edit*,*do=index.html,*indexer.php?id=*,*do=admin.html,*do=revisions.html,*do=media*" \
       --directory-prefix="$PREFIX" \
       --no-host-directories \
       $ADDITIONNAL_WGET_OPTS \
