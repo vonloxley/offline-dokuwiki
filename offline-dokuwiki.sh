@@ -52,7 +52,7 @@ while [ $# -gt 0 ]; do
          ;;
       --hostname)
          shift
-         HOSTNAME=$1
+         HOST=$1
          ;;
       --depth)
          shift
@@ -77,10 +77,10 @@ while [ $# -gt 0 ]; do
 done
 
 : ${DEPTH:=$DEF_DEPTH}
-: ${HOSTNAME:=$DEF_HOSTNAME}
+: ${HOST:=$DEF_HOSTNAME}
 : ${LOCATION:=$DEF_LOCATION}
 
-PREFIX="$(date +'%Y%m%d')-$HOSTNAME"
+PREFIX="$(date +'%Y%m%d')-$HOST"
 
 echo "[WGET] downloading: start: http://$HOSTNAME/$LOCATION (login/passwd=${USERNAME:-empty}/${PASSWORD:-empty})"
 wget  --no-verbose \
@@ -99,7 +99,7 @@ wget  --no-verbose \
       --directory-prefix="$PREFIX" \
       --no-host-directories \
       $ADDITIONNAL_WGET_OPTS \
-      "$PROTO://$HOSTNAME/$LOCATION"
+      "$PROTO://$HOST/$LOCATION"
 
 
 echo
